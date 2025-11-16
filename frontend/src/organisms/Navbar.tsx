@@ -15,6 +15,9 @@ const Navbar = () => {
                     <li>
                         <DefaultNavlink location={"/magic"}>Magic Bytes</DefaultNavlink>
                     </li>
+                    <li>
+                        <DefaultNavlink location={"/cookies"}>Cookies</DefaultNavlink>
+                    </li>
                 </ul>
             </div>
         </nav>
