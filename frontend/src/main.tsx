@@ -6,6 +6,7 @@ import ReDoS from "./pages/redos.tsx";
 import {BrowserRouter, Route, Routes} from "react-router";
 import Layout from "./pages/Layout.tsx";
 import Dashboard from "./pages/dashboard.tsx";
+import RegexInjection from "./pages/regexInjection.tsx";
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -16,6 +17,7 @@ createRoot(document.getElementById('root')!).render(
                     <Route path="/" element={<Dashboard />} />
                     <Route path="/redos" element={<ReDoS />} />
                     <Route path="/magic" element={<FileUploader />} />
+                    <Route path="/regex" element={<RegexInjection />} />
                 </Route>
             </Routes>
         </BrowserRouter>
