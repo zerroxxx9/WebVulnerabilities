@@ -8,11 +8,10 @@ type ValidationResult = {
 const ReDoS: React.FC = () => {
     const [input, setInput] = useState("");
     const [validation, setValidation] = useState<ValidationResult | null>(null)
+    const vulnerableRegexString = "^(\\w+\\s?)*$";
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-
-        const vulnerableRegexString = "^(\\w+\\s?)*$";
         const vulnerableRegex = new RegExp(vulnerableRegexString);
 
         const startTime = performance.now();
@@ -27,6 +26,7 @@ const ReDoS: React.FC = () => {
     return (
         <div className={"flex items-center justify-center h-screen w-screen"}>
             <h2 className={"font-semibold mb-4"}>ReDoS example</h2>
+            <p className={"font-semibold mb-4"}>currently using: '{vulnerableRegexString}' as a regex</p>
             <form onSubmit={handleSubmit} className={"flex flex-col items-center gap-2"}>
                 <input className={"border-blue border-solid border-2"} type="text" value={input} onChange={(e) => setInput(e.target.value)}/>
                 <button className={"border-blue border-solid border-2"} type="submit">Test Regex</button>
