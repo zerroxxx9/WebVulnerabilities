@@ -26,17 +26,17 @@ const ReDoS: React.FC = () => {
     return (
         <div className={"flex items-center justify-center h-screen w-screen"}>
             <div className={"flex items-center justify-center h-screen w-screen "}>
-                <p className={"font-semibold mb-4"}>currently using: '{vulnerableRegexString}' as regex</p>
                 <div className={"bg-blue-50 m-5 p-3 b-4 rounded-2xl"}>
+                    <p className={"font-semibold mb-4"}>currently using: '{vulnerableRegexString}' as regex</p>
                     <form onSubmit={handleSubmit} className={"flex flex-col items-center gap-2"}>
-                        <input className={"border-blue border-solid border-2"} type="text" value={input}
+                        <input className={"border-blue border-solid border-2 rounded-2xl p-1"} type="text" value={input}
                                onChange={(e) => setInput(e.target.value)}/>
-                        <button className={"border-blue border-solid border-2"} type="submit">Test Regex</button>
+                        <button className={"border-blue border-solid border-2 rounded-2xl p-1 w-30"} type="submit">test</button>
                     </form>
                 </div>
                 {validation && (
                     <div className={"mt-4 text-center"}>
-                        <p>Result: {validation.result ? "Match" : "No Match"}</p>
+                    <p>Result: {validation.result ? "Match" : "No Match"}</p>
                         <p>Time: {validation.time} ms</p>
                     </div>
                 )}
