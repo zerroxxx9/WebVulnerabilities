@@ -25,19 +25,22 @@ const ReDoS: React.FC = () => {
 
     return (
         <div className={"flex items-center justify-center h-screen w-screen"}>
-            <h2 className={"font-semibold mb-4"}>ReDoS example</h2>
-            <p className={"font-semibold mb-4"}>currently using: '{vulnerableRegexString}' as a regex</p>
-            <form onSubmit={handleSubmit} className={"flex flex-col items-center gap-2"}>
-                <input className={"border-blue border-solid border-2"} type="text" value={input} onChange={(e) => setInput(e.target.value)}/>
-                <button className={"border-blue border-solid border-2"} type="submit">Test Regex</button>
-            </form>
-
-            {validation && (
-                <div className={"mt-4 text-center"}>
-                    <p>Result: {validation.result ? "Match" : "No Match"}</p>
-                    <p>Time: {validation.time} ms</p>
+            <div className={"flex items-center justify-center h-screen w-screen "}>
+                <p className={"font-semibold mb-4"}>currently using: '{vulnerableRegexString}' as regex</p>
+                <div className={"bg-blue-50 m-5 p-3 b-4 rounded-2xl"}>
+                    <form onSubmit={handleSubmit} className={"flex flex-col items-center gap-2"}>
+                        <input className={"border-blue border-solid border-2"} type="text" value={input}
+                               onChange={(e) => setInput(e.target.value)}/>
+                        <button className={"border-blue border-solid border-2"} type="submit">Test Regex</button>
+                    </form>
                 </div>
-            )}
+                {validation && (
+                    <div className={"mt-4 text-center"}>
+                        <p>Result: {validation.result ? "Match" : "No Match"}</p>
+                        <p>Time: {validation.time} ms</p>
+                    </div>
+                )}
+            </div>
         </div>
     )
 }
